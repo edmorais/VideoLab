@@ -1,0 +1,18 @@
+#
+#  _    ___     __           __          __
+# | |  / (_)___/ /__  ____  / /   ____ _/ /_
+# | | / / / __  / _ \/ __ \/ /   / __ `/ __ \
+# | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
+# |___/_/\__,_/\___/\____/_____/\__,_/_.___/
+#
+# by Eduardo Morais 2013 - www.eduardomorais.pt
+
+
+# capture width & height:
+cap.width			= 640
+cap.height			= 480
+
+# default save folder
+opt.save			= Saved Images
+# default save png (jpeg if false)
+opt.png				= true
