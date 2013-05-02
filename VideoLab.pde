@@ -10,20 +10,29 @@
  */
 
 
-// Libs
+/*
+ * Libraries
+ */
 import java.util.*;
 import java.text.*;
 import java.awt.event.KeyEvent;
 import processing.video.*;
 import sojamo.drop.*;  // http://www.sojamo.de/libraries/drop/
 
+/*
+ * GLOBALS (denoted by $)
+ */
+String $version = "beta 0.91";
 
-// GLOBALS (denoted by $)
-String $version = "beta 0.9";
+// default options:
+boolean $live = false;
+boolean $stopped = false;
+// allowed video file extensions:
+String[] $videoExts = {"mov", "avi", "mp4", "mpg", "mpeg"};
+String $videoDefault = "video/telefunken.mp4";
 
-int $windowWidth = 1024;
-int $windowHeight = 768;  // screen size
 
+// video:
 Capture $cam;  // camera object
 Movie $video;
 int $camNum = 0;
@@ -37,16 +46,9 @@ int[][] $screenTypes = {{640, 480, 48, 0}, {736, 414, 0, 33}}; // w, h, x, y
 int $screenType = 0;
 color $pxl;  // a pixel
 
-// default options:
-boolean $live = false;
-boolean $stopped = false;
-// allowed video file extensions:
-String[] $videoExts = {"mov", "avi", "mp4", "mpg", "mpeg"};
-String $videoDefault = "video/telefunken.mp4";
-int $mode = 0;
-
 
 // control flags:
+int $mode = 0;
 boolean $pressing = false;
 boolean $dragged = false;
 String $videoFile;
@@ -56,6 +58,8 @@ int $rate = 1;
 int $cycle = 0;
 
 // UI:
+int $windowWidth = 1024;
+int $windowHeight = 768;  // screen size
 String $assetsDir = "ui/";
 PImage $monitorOverlay, $labBackground;
 PImage $labOverlayGradient;
@@ -92,5 +96,3 @@ final int MIDX_ASPECT        = MODE_ASPECT - 1;
 final int MIDX_INTERLACE     = MODE_INTERLACE - 1;
 final int MIDX_SAMPLING      = MODE_SAMPLING - 1;
 final int MIDX_BITDEPTH      = MODE_BITDEPTH - 1;
-
-

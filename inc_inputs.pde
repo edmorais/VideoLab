@@ -93,6 +93,7 @@ void keyReleased() {
 void keyPressed() {
     // disable ESC:
     if (key == ESC) { key = 0; }
+    if (key == 'Q' || key == 'q') { key = ESC;}
 }
 
 
