@@ -22,7 +22,7 @@ import sojamo.drop.*;  // http://www.sojamo.de/libraries/drop/
 /*
  * GLOBALS (denoted by $)
  */
-String $version = "beta 0.91";
+String $version = "1.0";
 
 // default options:
 boolean $live = false;
@@ -30,6 +30,7 @@ boolean $stopped = false;
 // allowed video file extensions:
 String[] $videoExts = {"mov", "avi", "mp4", "mpg", "mpeg"};
 String $videoDefault = "video/telefunken.mp4";
+String $helpLang = "en";
 
 
 // video:
@@ -53,8 +54,8 @@ boolean $pressing = false;
 boolean $dragged = false;
 String $videoFile;
 // frame rates:
-float[] $rates = {1, 2, 4, 6.25, 12.5, 25, 50};
-int $rate = 1;
+float[] $rates = {1, 2, 4, 6.25, 12.5, 25};
+int $rate = 0;
 int $cycle = 0;
 
 // UI:

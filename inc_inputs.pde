@@ -206,7 +206,7 @@ void mouseReleased() {
             case MODE_INTERLACE:
                 if ($uiModes[MIDX_INTERLACE][0].isOver() || $uiModes[MIDX_INTERLACE][1].isOver()) {
                     $interlace = !$interlace;
-                    $msgs = $interlace ? "\nInterlaced scanning" : "\nProgressive scanning";
+                    msgFrameRate(false);
                 }
                 // scaling
                 if ($uiModes[MIDX_INTERLACE][2].isOver()) {
@@ -311,6 +311,8 @@ void msgFrameRate(boolean graph) {
 
     if ($interlace && $mode == MODE_INTERLACE) {
         $msgs = $msgs + int(hz)+"i video ("+df+"ms between fields)";
+    } else if ($mode == MODE_INTERLACE) {
+        $msgs = $msgs + int(hz)+"p video ("+df+"ms between frames)";
     } else {
         $msgs = $msgs + int(hz)+"p / frames per second video";
     }

@@ -16,3 +16,6 @@ cap.height			= 480
 opt.save			= Saved Images
 # default save png (jpeg if false)
 opt.png				= true
+
+# help language
+language			= en

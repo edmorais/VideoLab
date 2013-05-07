@@ -27,6 +27,8 @@ void setup() {
 
             $saveFolder        = cfg.getString("opt.save", $saveFolder);
             $savePNG           = cfg.getBoolean("opt.png", $savePNG);
+
+            $helpLang          = cfg.getString("language", $helpLang);
         }
     } catch(IOException e) {
         println("couldn't read config file...");
@@ -88,7 +90,7 @@ void setup() {
     $Help[MODE_BITDEPTH] = new PImage[5];
     for (int h = 0; h < $Help.length; h++) {
         for (int i = 0; i < $Help[h].length; i++) {
-            $Help[h][i] = loadImage($assetsDir+"help/"+$helpSections[h]+"_"+i+".png");
+            $Help[h][i] = loadImage($assetsDir+"help_"+$helpLang+"/"+$helpSections[h]+"_"+i+".png");
         }
         $helpShown[h] = false;
     }
