@@ -78,14 +78,14 @@ void wait(int ms) {
 /*
  * Draw text with outline
  */
-void teleText(String text, int x, int y, color fg, color bg, int offset) {
+void teleText(String txt, int x, int y, color fg, color bg, int offset) {
     fill(bg);
-    text(text, x - offset, y -  offset);
-    text(text, x - offset, y +  offset);
-    text(text, x + offset, y -  offset);
-    text(text, x + offset, y +  offset);
+    text(txt, x - offset, y -  offset);
+    text(txt, x - offset, y +  offset);
+    text(txt, x + offset, y -  offset);
+    text(txt, x + offset, y +  offset);
     fill(fg);
-    text(text, x, y);
+    text(txt, x, y);
 }
 
 
@@ -95,7 +95,35 @@ void teleText(String text, int x, int y, color fg, color bg, int offset) {
 void saveImage() {
     String ff = $savePNG ? ".png" : ".jpg";
     Date now = new Date();
-    SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd_hhmmss");
+    SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd_HHmmss");
     save($saveFolder+"/screen_" + df.format(now) + ff);
-    $msgs = "Imagem gravada";
+}
+
+
+/*
+ * Write log file
+ * http://stackoverflow.com/questions/17010222/how-do-i-append-text-to-a-csv-txt-file-in-processing
+ */
+void writeLog(String txt) {
+    if ($logging) {
+        writeLog(txt, "");
+    }
+}
+void writeLog(String txt, String before) {
+    if ($logging) {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date now = new Date();
+        txt = df.format(now) + " - " + txt;
+        if (before != "") {
+            txt = before + "\n" + txt;
+        }
+
+        try {
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(sketchPath($saveLog), true)));
+            out.println(txt);
+            out.close();
+        } catch (IOException e) {
+            println("Error writing logfile.");
+        }
+    }
 }

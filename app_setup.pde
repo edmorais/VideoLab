@@ -1,6 +1,6 @@
 /*
  * VideoLab
- * by Eduardo Morais 2013 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2015 - www.eduardomorais.pt
  *
  */
 
@@ -26,7 +26,11 @@ void setup() {
             $capHeight         = cfg.getInt("cap.height", $capHeight);
 
             $saveFolder        = cfg.getString("opt.save", $saveFolder);
+            $saveLog           = cfg.getString("opt.logfile", $saveLog);
             $savePNG           = cfg.getBoolean("opt.png", $savePNG);
+            $logging           = cfg.getBoolean("opt.logging", $logging);
+            $screenLogDelay    = cfg.getInt("opt.screenlogdelay", $screenLogDelay);
+            if ($screenLogDelay < 5 || $screenLogDelay > 1000) { $screenLogDelay = 60; }
 
             $helpLang          = cfg.getString("language", $helpLang);
         }
@@ -94,5 +98,7 @@ void setup() {
         }
         $helpShown[h] = false;
     }
+
+    writeLog("VideoLab started! \n---------------------------------------", "---------------------------------------");
 
 }

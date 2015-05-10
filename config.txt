@@ -3,9 +3,9 @@
 # | |  / (_)___/ /__  ____  / /   ____ _/ /_
 # | | / / / __  / _ \/ __ \/ /   / __ `/ __ \
 # | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
-# |___/_/\__,_/\___/\____/_____/\__,_/_.___/
+# |___/_/\__,_/\___/\____/_____/\__,_/_.___/ v 1.2
 #
-# by Eduardo Morais 2013 - www.eduardomorais.pt
+# by Eduardo Morais 2013-2015 - www.eduardomorais.pt
 
 
 # capture width & height:
@@ -13,9 +13,16 @@ cap.width			= 640
 cap.height			= 480
 
 # default save folder
-opt.save			= Saved Images
+opt.save			= Screenshots
 # default save png (jpeg if false)
-opt.png				= true
+opt.png				= false
+
+# logging
+opt.logging			= false
+# log file
+opt.logfile			= VideoLab.log.txt
+# screen logging time (seconds)
+opt.screenlogdelay	= 30
 
 # help language
 language			= en

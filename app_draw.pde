@@ -1,6 +1,6 @@
 /*
  * VideoLab
- * by Eduardo Morais 2012 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2015 - www.eduardomorais.pt
  *
  */
 
@@ -78,6 +78,12 @@ void draw() {
         // draw ui
         image($labBackground, 0, 600);
         drawUI();
+    }
+
+    // screen logging?
+    if ($logging && millis() >= $screenLogTime + ($screenLogDelay*1000)) {
+        $screenLogTime = millis();
+        saveImage();
     }
 }
 
@@ -158,6 +164,7 @@ void selectVideo(File selection) {
             selectInput("Please select a supported video file...", "selectVideo");
         }
         $msgs = "File selected\n" + fn;
+        writeLog("Loaded video" + fn);
     }
     $dragged = false;
 }

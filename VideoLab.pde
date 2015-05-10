@@ -5,7 +5,7 @@
  * | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
  * |___/_/\__,_/\___/\____/_____/\__,_/_.___/
  *
- * by Eduardo Morais 2013 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2015 - www.eduardomorais.pt
  *
  */
 
@@ -15,6 +15,8 @@
  */
 import java.util.*;
 import java.text.*;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.awt.event.KeyEvent;
 import processing.video.*;
 import sojamo.drop.*;  // http://www.sojamo.de/libraries/drop/
@@ -22,7 +24,7 @@ import sojamo.drop.*;  // http://www.sojamo.de/libraries/drop/
 /*
  * GLOBALS (denoted by $)
  */
-String $version = "1.0";
+String $version = "1.2";
 
 // default options:
 boolean $live = false;
@@ -81,8 +83,12 @@ boolean[] $helpShown;
 
 // miscs:
 String $saveFolder = "Saved Images";
+String $saveLog = "VideoLab.log";
 boolean $savePNG = true;
 boolean $saving = false;
+boolean $logging = false;
+int $screenLogDelay = 60;
+int $screenLogTime = 0;
 
 // constants:
 final int MODE_OFF           = 0;

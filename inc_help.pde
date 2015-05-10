@@ -1,6 +1,6 @@
 /*
  * VideoLab
- * by Eduardo Morais 2012 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2015 - www.eduardomorais.pt
  *
  */
 
@@ -34,6 +34,7 @@ void moreHelp() {
         $helpIndex = 0;
         $helpShown[$mode] = true;
         $helpShow = false;
+        writeLog("Left help (reached last page).");
     }
 }
 
