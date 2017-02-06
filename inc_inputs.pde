@@ -280,7 +280,7 @@ void mouseReleased() {
             case MODE_ASPECT:
                 if ($uiModes[MIDX_ASPECT][0].isOver() || $uiModes[MIDX_ASPECT][1].isOver()) {
                     $aspect_wide = !$aspect_wide;
-                    $monitor.background(0);
+                    prepareBuffer();
                     $stopped = false;
                     if ($aspect_wide) {
                         writeLog("Aspect: Switched to 16:9 ratio.");

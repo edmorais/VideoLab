@@ -2,9 +2,9 @@
 | |  / (_)___/ /__  ____  / /   ____ _/ /_
 | | / / / __  / _ \/ __ \/ /   / __ `/ __ \
 | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
-|___/_/\__,_/\___/\____/_____/\__,_/_.___/ v 1.2
+|___/_/\__,_/\___/\____/_____/\__,_/_.___/ v 1.3
 
-by Eduardo Morais 2013-2015
+by Eduardo Morais 2013-2017
 
 Videolab is an educational software piece that teaches and lets users experiment with the following concepts of digital video technology:
 
@@ -14,7 +14,6 @@ Videolab is an educational software piece that teaches and lets users experiment
 - Color depth.
 
 It can be used standalone by students or as a lecturing tool by instructors.
-Releases: https://github.com/edmorais/VideoLab/releases
 
 Made with Processing.
 

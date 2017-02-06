@@ -5,7 +5,7 @@
 # | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
 # |___/_/\__,_/\___/\____/_____/\__,_/_.___/ v 1.2
 #
-# by Eduardo Morais 2013-2015 - www.eduardomorais.pt
+# by Eduardo Morais 2013-2017 - www.eduardomorais.pt
 
 
 # capture width & height:

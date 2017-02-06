@@ -1,6 +1,6 @@
 /*
  * VideoLab
- * by Eduardo Morais 2013-2015 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
  *
  */
 

@@ -1,6 +1,6 @@
 /*
  * VideoLab
- * by Eduardo Morais 2013-2015 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
  *
  */
 
@@ -120,6 +120,7 @@ void prepareVideo() {
         $video = new Movie(this, $videoFile);
         $video.jump(0);
         $video.loop();
+        $video.volume(0);
         $video.play();
         $video.read(); // we need to know its size before calling prepareBuffer()
         $feed = $video;

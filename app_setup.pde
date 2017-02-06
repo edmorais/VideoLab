@@ -1,13 +1,18 @@
 /*
  * VideoLab
- * by Eduardo Morais 2013-2015 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
  *
  */
+
 
 
 /*
  * SETUP
  */
+void settings() {
+  size($windowWidth, $windowHeight);
+}
+
 void setup() {
 
     // try to load config file:
@@ -15,7 +20,7 @@ void setup() {
 
     try {
         // load a configuration from a file inside the data folder
-        InputStream cf = openStream("config.txt");
+        InputStream cf = createInput("config.txt");
         if (cf != null) {
             cfg.load(cf);
 
@@ -39,8 +44,8 @@ void setup() {
     }
 
     // set screen:
-    size($windowWidth, $windowHeight);
-    frame.setTitle("VideoLab » "+$version);
+
+    surface.setTitle("VideoLab » "+$version);
     smooth();
     background(0);
 

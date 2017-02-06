@@ -5,8 +5,9 @@
  * | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
  * |___/_/\__,_/\___/\____/_____/\__,_/_.___/
  *
- * by Eduardo Morais 2013-2015 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
  *
+ * tested with Processing 3.2.4
  */
 
 
@@ -19,12 +20,12 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.awt.event.KeyEvent;
 import processing.video.*;
-import sojamo.drop.*;  // http://www.sojamo.de/libraries/drop/
+import drop.*;  // http://www.sojamo.de/libraries/drop/
 
 /*
  * GLOBALS (denoted by $)
  */
-String $version = "1.2";
+String $version = "1.3";
 
 // default options:
 boolean $live = false;
