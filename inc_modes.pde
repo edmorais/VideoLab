@@ -1,10 +1,16 @@
 /*
  * VideoLab
- * by Eduardo Morais - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
  */
 
 /*
- * MODES
+ * MODE FUNCTIONS
+ * aspect ratio, interlace, chroma sampling, and bit depth simulation functions
+ */
+
+
+/*
+ * Mode globals
  */
 
 // aspect mode:

@@ -4,7 +4,10 @@
  *
  */
 
-
+/*
+ * HELP FUNCTIONS:
+ * draw and control tutorial slides
+ */
 
 /*
  * HELP

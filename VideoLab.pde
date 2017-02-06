@@ -5,27 +5,33 @@
  * | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
  * |___/_/\__,_/\___/\____/_____/\__,_/_.___/
  *
- * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2017
+ * www.eduardomorais.pt/projects/videolab
  *
  * tested with Processing 3.2.4
+ */
+
+/*
+ * MAIN FILE:
+ * Libraries, globals, and constants
  */
 
 
 /*
  * Libraries
  */
+import processing.video.*;
+import drop.*;  // http://www.sojamo.de/libraries/drop/
 import java.util.*;
 import java.text.*;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.awt.event.KeyEvent;
-import processing.video.*;
-import drop.*;  // http://www.sojamo.de/libraries/drop/
 
 /*
  * GLOBALS (denoted by $)
  */
-String $version = "1.3";
+String $version = "1.3.1";
 
 // default options:
 boolean $live = false;

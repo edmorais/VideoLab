@@ -1,7 +1,13 @@
 /*
  * VideoLab
- * by Eduardo Morais - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
  */
+
+/*
+ * INPUT FUNCTIONS:
+ * keyPressed/Released events, mouse/drop events
+ */
+
 
 /*
  * Keyboard
@@ -388,7 +394,6 @@ void mouseReleased() {
         }
     }
 
-
     // redraw UI
     controlUI();
 
@@ -407,78 +412,4 @@ void dropEvent(DropEvent dropped) {
 
     // redraw UI
     controlUI();
-}
-
-
-
-/*
- * MESSAGES
- */
-
-// Frame Rate:
-void msgFrameRate(boolean graph) {
-    float hz = 50/$rates[$rate];
-    int df = int(1000/hz);
-    $msgs = "\n";
-    if (graph) {
-        $msgs = textGraph($rates.length-1, $rates.length-$rate-1);
-    }
-
-    if ($interlace && $mode == MODE_INTERLACE) {
-        $msgs = $msgs + int(hz)+"i video ("+df+"ms between fields)";
-    } else if ($mode == MODE_INTERLACE) {
-        $msgs = $msgs + int(hz)+"p video ("+df+"ms between frames)";
-    } else {
-        $msgs = $msgs + int(hz)+"p / frames per second video";
-    }
-}
-
-// Sampling
-void msgSampling() {
-    int s1 = $samplings[$subsampling][0];
-    int s2 = $samplings[$subsampling][1];
-    int f1 = 4 / s1;
-    int f2 = s2 == 2 ? 0 : f1 / s2;
-
-    $msgs = "\n4:"+f1+":"+f2+" chroma subsampling";
-    writeLog("Sampling: 4:"+f1+":"+f2+" chroma subsampling.");
-}
-
-void msgSamplingFilters() {
-    String txty = $sampling_luma ? "Luminance ON" : "Luminance OFF";
-    String txtuv = $sampling_chroma ? "Chrominance ON" : "Chrominance OFF";
-    $msgs = txty + "\n" + txtuv;
-}
-
-// Aspect
-void msgAspectRatio() {
-    $msgs = $aspect_wide ? "\n16:9 widescreen picture ratio" : "\n4:3 standard picture ratio";
-}
-
-// Sampling
-void msgBitDepth() {
-    int bd = int(pow(2, 3-$bitdepth));
-
-    $msgs = bd > 1 ? "\n"+bd+" bits per channel" : "\n1 bit per channel";
-    writeLog("Bitdepth: " + bd + " bits per channel.");
-}
-
-
-// Display bar
-String textGraph(int total, int level) {
-    String txt = "";
-    if (total < 4) {
-        total = total * 2;
-        level = level * 2;
-    }
-    if (total > 0 && level <= total) {
-        for (int i = 0; i < level; i++) {
-            txt = txt + "|||||||||";
-        }
-        for (int i = 0; i < total-level; i++) {
-            txt = txt + "-------";
-        }
-        txt = txt + "\n";
-    }
-    return txt;
 }

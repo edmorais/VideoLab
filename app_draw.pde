@@ -4,6 +4,10 @@
  *
  */
 
+/*
+ * APP DRAW:
+ * main Processing draw() loop
+ */
 
 
 /*
@@ -85,103 +89,4 @@ void draw() {
         $screenLogTime = millis();
         saveImage();
     }
-}
-
-
-
-/*
- * PREPARE WEBCAM
- */
-void prepareCamera() {
-    if ($camNum > 0) {
-        $cam = new Capture(this, $capWidth, $capHeight);
-        $cam.start();
-        $feed = $cam;
-        $live = true;
-        if ($video != null) {
-            $video.stop();
-        }
-
-        $stopped = false;
-        // prepareUI();
-        $msgs = "\nLive camera feed";
-    }
-}
-
-
-/*
- * PREPARE VIDEO FILE
- */
-void prepareVideo() {
-    if ($videoFile != null) {
-        if ($video != null) {
-            $video.stop();
-        }
-        $video = new Movie(this, $videoFile);
-        $video.jump(0);
-        $video.loop();
-        $video.volume(0);
-        $video.play();
-        $video.read(); // we need to know its size before calling prepareBuffer()
-        $feed = $video;
-        $live = false;
-        if ($cam != null) {
-            $cam.stop();
-        }
-        $stopped = false;
-    }
-}
-
-
-/*
- * Select video file
- */
-void selectVideo(File selection) {
-    if (selection == null) {
-        println("Window was closed or the user hit cancel.");
-        $videoFile = null;
-    } else {
-        println("User selected " + selection.getAbsolutePath());
-        String fn = selection.getName();
-        String fext = fn.substring(fn.lastIndexOf(".") + 1, fn.length());
-        String ext;
-        boolean ok = false;
-
-        for (int i = 0; i < $videoExts.length; i++) {
-            ext = $videoExts[i];
-            if (ext.equalsIgnoreCase(fext)) {
-                ok = true;
-                break;
-            }
-        }
-
-        if (ok) {
-            $stopped = true;
-            $videoFile = selection.getAbsolutePath();
-            prepareVideo();
-
-            // prepareUI();
-        } else if (!$dragged) {
-            selectInput("Please select a supported video file...", "selectVideo");
-        }
-        $msgs = "File selected\n" + fn;
-        writeLog("Loaded video" + fn);
-    }
-    $dragged = false;
-}
-
-
-/*
- * PREPARE DRAWING BUFFER
- */
-void prepareBuffer() {
-    $buffer = createGraphics($screenTypes[$screenType][0], $screenTypes[$screenType][1]);
-    $monitor = createGraphics($screenTypes[$screenType][0], $screenTypes[$screenType][1]);
-
-    $buffer.beginDraw();
-    $buffer.background(0);
-    $buffer.endDraw();
-    $monitor.beginDraw();
-    $monitor.background(0);
-    $monitor.endDraw();
 }

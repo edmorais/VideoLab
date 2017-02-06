@@ -1,10 +1,11 @@
 /*
  * VideoLab
- * by Eduardo Morais - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
  */
 
 /*
- * Utilities
+ * UTILITY FUNCTIONS:
+ * to read config file, logging, saving images, and etecetera
  */
 
 
@@ -74,20 +75,6 @@ void wait(int ms) {
         // wait
     }
 }
-
-/*
- * Draw text with outline
- */
-void teleText(String txt, int x, int y, color fg, color bg, int offset) {
-    fill(bg);
-    text(txt, x - offset, y -  offset);
-    text(txt, x - offset, y +  offset);
-    text(txt, x + offset, y -  offset);
-    text(txt, x + offset, y +  offset);
-    fill(fg);
-    text(txt, x, y);
-}
-
 
 /*
  * Save image with the date in the filename
