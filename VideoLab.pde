@@ -3,7 +3,7 @@
  * | |  / (_)___/ /__  ____  / /   ____ _/ /_
  * | | / / / __  / _ \/ __ \/ /   / __ `/ __ \
  * | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
- * |___/_/\__,_/\___/\____/_____/\__,_/_.___/
+ * |___/_/\__,_/\___/\____/_____/\__,_/_.___/  ][
  *
  * by Eduardo Morais 2013-2017
  * www.eduardomorais.pt/projects/videolab
@@ -31,7 +31,7 @@ import java.awt.event.KeyEvent;
 /*
  * GLOBALS (denoted by $)
  */
-String $version = "1.3.1";
+String $version = "2.000a";
 
 // default options:
 boolean $live = false;
