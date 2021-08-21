@@ -2,9 +2,9 @@
 | |  / (_)___/ /__  ____  / /   ____ _/ /_
 | | / / / __  / _ \/ __ \/ /   / __ `/ __ \
 | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
-|___/_/\__,_/\___/\____/_____/\__,_/_.___/ v 1.3
+|___/_/\__,_/\___/\____/_____/\__,_/_.___/ v 1.4b01
 
-by Eduardo Morais 2013-2017
+by Eduardo Morais 2013-2021
 
 Videolab is an educational software piece that teaches and lets users experiment with the following concepts of digital video technology:
 
@@ -15,7 +15,8 @@ Videolab is an educational software piece that teaches and lets users experiment
 
 It can be used standalone by students or as a lecturing tool by instructors.
 
-Requires Processing 3.2.x, video and drop libraries.
+Tested successfully with Processing 4.0b1/Win10.
+Requires video and drop libraries.
 
 ----------------------------------------------
 

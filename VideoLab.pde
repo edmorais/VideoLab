@@ -5,10 +5,10 @@
  * | |/ / / /_/ /  __/ /_/ / /___/ /_/ / /_/ /
  * |___/_/\__,_/\___/\____/_____/\__,_/_.___/
  *
- * by Eduardo Morais 2013-2017
+ * by Eduardo Morais 2013-2021
  * www.eduardomorais.pt/projects/videolab
  *
- * tested with Processing 3.2.4
+ * tested with Processing 4.0b1
  */
 
 /*
@@ -31,7 +31,7 @@ import java.awt.event.KeyEvent;
 /*
  * GLOBALS (denoted by $)
  */
-String $version = "1.3.1";
+String $version = "1.4b1";
 
 // default options:
 boolean $live = false;

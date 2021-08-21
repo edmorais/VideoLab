@@ -1,6 +1,6 @@
 /*
  * VideoLab
- * by Eduardo Morais 2013-2017 - www.eduardomorais.pt
+ * by Eduardo Morais 2013-2021 - www.eduardomorais.pt
  *
  */
 
@@ -13,15 +13,19 @@
 
 /*
  * SETTINGS (for Processing 3)
+ Doesn't work in Processing 4b1
  */
+ /*
 void settings() {
   size($windowWidth, $windowHeight);
 }
+/*
 
 /*
  * SETUP
  */
 void setup() {
+    size(1024, 768); // Processing 4b1 workaround
 
     // try to load config file:
     Config cfg = new Config();
