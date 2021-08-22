@@ -24,5 +24,5 @@ opt.logfile			= VideoLab.log.txt
 # screen logging time (seconds)
 opt.screenlogdelay	= 30
 
-# help language
+# program language (en|pt)
 language			= en
